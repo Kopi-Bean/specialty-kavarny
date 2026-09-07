@@ -71,22 +71,41 @@
 
 /* ===== HLAVIČKA ===== */
 #vo .site-head{position:sticky;top:0;z-index:200;background:rgba(253,251,247,.94);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--rule)}
-#vo .site-head .wrap{display:flex;align-items:center;gap:26px;height:68px}
-#vo .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;flex:0 0 auto}
+#vo .site-head .wrap{display:flex;align-items:center;gap:20px;height:68px}
+#vo .site-logo{display:flex;align-items:center;gap:10px;flex:1 1 0;min-width:0}
 #vo .site-logo img{height:28px;width:auto;display:block}
-#vo .site-logo .wordmark{font-weight:800;font-size:19px;letter-spacing:-.03em;color:var(--ink)}
-#vo .site-nav{display:flex;gap:24px;align-items:center}
+#vo .site-nav{display:flex;gap:26px;align-items:center;flex:0 0 auto}
 #vo .site-nav a{font-size:14.5px;font-weight:500;color:var(--ink-mute);text-decoration:none;white-space:nowrap;transition:color .12s}
 #vo .site-nav a:hover{color:var(--accent)}
-#vo .head-cta{display:flex;align-items:center;gap:14px;flex:0 0 auto}
+#vo .head-cta{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex:1 1 0}
 #vo .head-cta .eshop{font-size:14.5px;font-weight:500;color:var(--ink-mute);text-decoration:none;white-space:nowrap}
 #vo .head-cta .eshop:hover{color:var(--accent)}
-#vo .head-cta .btn{padding:10px 18px;font-size:14.5px}
-@media(max-width:1080px){#vo .site-nav{display:none}}
+#vo .head-cta .btn{padding:10px 18px;font-size:14.5px;white-space:nowrap}
+
+/* hamburger */
+#vo .nav-toggle{display:none;width:42px;height:42px;padding:0;margin-left:2px;background:transparent;border:1px solid var(--rule);
+  border-radius:9px;cursor:pointer;align-items:center;justify-content:center;flex:0 0 auto}
+#vo .nav-toggle span{display:block;position:relative;width:17px;height:1.5px;background:var(--ink);transition:background .15s}
+#vo .nav-toggle span:before,#vo .nav-toggle span:after{content:"";position:absolute;left:0;width:17px;height:1.5px;background:var(--ink);transition:transform .18s}
+#vo .nav-toggle span:before{top:-5.5px}
+#vo .nav-toggle span:after{top:5.5px}
+#vo .site-head.open .nav-toggle span{background:transparent}
+#vo .site-head.open .nav-toggle span:before{transform:translateY(5.5px) rotate(45deg)}
+#vo .site-head.open .nav-toggle span:after{transform:translateY(-5.5px) rotate(-45deg)}
+
+@media(max-width:1080px){
+  #vo .nav-toggle{display:flex}
+  #vo .site-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper-2);border-bottom:1px solid var(--rule);box-shadow:0 12px 24px rgba(26,32,28,.07);padding:6px 0}
+  #vo .site-head.open .site-nav{display:flex}
+  #vo .site-nav a{padding:14px 28px;font-size:16px;color:var(--ink);border-bottom:1px solid var(--rule)}
+  #vo .site-nav a:last-child{border-bottom:0}
+}
 @media(max-width:640px){
-  #vo .site-head .wrap{height:58px;gap:14px}
+  #vo .site-head .wrap{height:58px;gap:10px}
   #vo .head-cta .eshop{display:none}
-  #vo .head-cta .btn{padding:9px 15px;font-size:14px}
+  #vo .head-cta .btn{padding:9px 14px;font-size:14px}
+  #vo .site-nav a{padding:14px 20px}
 }
 
 /* ===== PATIČKA ===== */
@@ -143,7 +162,6 @@
   #vo .hero-eyebrow span+span{margin-top:0}
   #vo .hero-eyebrow span+span:before{content:"·";margin:0 8px}
 }
-#vo .chips{display:none}
 #vo .curve-block{margin-top:8px;padding-bottom:40px}
 #vo .curve-head{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--rule);padding-top:10px;margin-bottom:6px;gap:20px;flex-wrap:wrap}
 #vo .legend{display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-mute);letter-spacing:.06em}
@@ -334,12 +352,6 @@
   #vo .steps{grid-template-columns:1fr 1fr}
   #vo .step{border-bottom:1px solid var(--rule);padding-bottom:16px}
   #vo .step:nth-child(2n){border-right:none}
-  #vo .chips{display:flex;gap:8px;overflow-x:auto;padding:0 0 28px;margin:0 -28px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  #vo .chips::-webkit-scrollbar{display:none}
-  #vo .chips:before,#vo .chips:after{content:"";flex:0 0 28px}
-  #vo .chips a:active{background:var(--ink);border-color:var(--ink);color:var(--paper-2)}
-  #vo .chips a{flex:0 0 auto;border:1px solid var(--rule);border-radius:999px;background:var(--white);padding:8px 15px;
-    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute);white-space:nowrap;text-decoration:none}
   #vo .carousel-wrapper.js-on .carousel-btn{display:none}
   #vo .carousel-wrapper.js-on .carousel-dots{display:flex}
 }
@@ -352,8 +364,6 @@
 @media(max-width:640px){
   #vo [id]{scroll-margin-top:74px}
   #vo .wrap{padding:0 20px}
-  #vo .chips{margin:0 -20px}
-  #vo .chips:before,#vo .chips:after{flex:0 0 20px}
   #vo .btn{width:100%}
   #vo .head-cta .btn{width:auto}
   #vo .cta-row{gap:12px}
@@ -391,7 +401,7 @@
       <img src="img/logo-kopibean.svg" alt="Kopi Bean" width="120" height="28">
     </span>
 
-    <nav class="site-nav" aria-label="Sekce stránky">
+    <nav class="site-nav" id="site-nav" aria-label="Sekce stránky">
       <a href="#servis">Spolupráce</a>
       <a href="#ceny">Ceny</a>
       <a href="#provozy">Provozy</a>
@@ -403,6 +413,8 @@
     <div class="head-cta">
       <a class="eshop" href="https://www.kopibean.cz" target="_blank" rel="noopener">E-shop&nbsp;↗</a>
       <a class="btn btn-primary" href="#poptavka">Vzorky zdarma</a>
+      <button class="nav-toggle" type="button" id="nav-toggle"
+              aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
     </div>
   </div>
 </header>
@@ -419,15 +431,6 @@
       <a href="#ceny" class="btn btn-ghost">Jak fungují ceny</a>
     </div>
 
-    <nav class="chips" aria-label="Obsah stránky">
-      <a href="#servis">Spolupráce</a>
-      <a href="#ceny">Ceny</a>
-      <a href="#provozy">Naše provozy</a>
-      <a href="#puvod">Odkud zrno bereme</a>
-      <a href="#branding">Prodej hostům</a>
-      <a href="#faq">Časté otázky</a>
-      <a href="#poptavka">Vzorky zdarma</a>
-    </nav>
   </div>
 
   <div class="wrap curve-block">
@@ -860,7 +863,7 @@
 
           <input type="hidden" name="stranka" value="velkoobchod">
 
-          <button type="submit" class="btn btn-primary" id="vo-submit">Poslat poptávku a chtít vzorky</button>
+          <button type="submit" class="btn btn-primary" id="vo-submit">Poslat poptávku</button>
           <div class="form-msg" id="vo-msg" role="status" aria-live="polite"></div>
         </form>
       </div>
@@ -934,6 +937,29 @@
 <script>
 (function(){
   function init(){
+    /* ---- HAMBURGER ---- */
+    var head = document.querySelector('#vo .site-head');
+    var toggle = document.getElementById('nav-toggle');
+    if (head && toggle) {
+      var zavri = function(){
+        head.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      };
+      toggle.addEventListener('click', function(){
+        var otevreno = head.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', otevreno ? 'true' : 'false');
+      });
+      head.querySelectorAll('.site-nav a').forEach(function(a){
+        a.addEventListener('click', zavri);
+      });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') zavri();
+      });
+      document.addEventListener('click', function(e){
+        if (head.classList.contains('open') && !head.contains(e.target)) zavri();
+      });
+    }
+
     var wrap = document.querySelector('#vo .carousel-wrapper');
     var track = document.querySelector('#vo .carousel-track');
     var prev = document.querySelector('#vo .carousel-btn.prev');
@@ -1031,7 +1057,7 @@
           msg.className = 'form-msg err';
           msg.innerHTML = 'Odeslání se nepovedlo. Zkuste to prosím znovu, nebo nám rovnou zavolejte na <a href="tel:+420603411067">603 411 067</a>.';
           btn.disabled = false;
-          btn.textContent = 'Poslat poptávku a chtít vzorky';
+          btn.textContent = 'Poslat poptávku';
         });
     });
   }
