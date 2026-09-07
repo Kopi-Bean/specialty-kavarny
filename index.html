@@ -267,12 +267,14 @@
 #vo .ops-list div{background:var(--paper-2);padding:18px}
 #vo .ops-list strong{display:block;font-size:15px}
 #vo .ops-list span{font:10px 'IBM Plex Mono',monospace;color:#7E8983;text-transform:uppercase;letter-spacing:.06em}
-#vo .ops-image{border-radius:12px;background:#DDD4C7;min-height:380px;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:#7E776D;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em}
+#vo .ops-image img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block}
+#vo .ops-image{overflow:hidden;padding:0;border-radius:12px;background:#DDD4C7;min-height:380px;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:#7E776D;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em}
 
 /* PŮVOD */
 #vo .source{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 #vo .source p+p{margin-top:16px}
-#vo .ph{aspect-ratio:16/10;background:#DED5C8;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777066;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em;padding:25px}
+#vo .ph img{width:100%;height:100%;object-fit:cover;display:block}
+#vo .ph{overflow:hidden;padding:0;aspect-ratio:16/10;background:#DED5C8;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777066;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em;padding:25px}
 #vo .dest{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 #vo .dest div{padding:22px;background:var(--paper-2);border:1px solid var(--rule);border-radius:10px}
 #vo .dest strong{display:block;margin-bottom:6px}
@@ -304,6 +306,7 @@
 #vo .refs-head h3{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;max-width:34ch}
 #vo .references{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
 #vo .ref-card{padding:24px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);display:flex;flex-direction:column;gap:16px}
+#vo .ref-logo img{max-width:70%;max-height:44px;width:auto;height:auto;object-fit:contain;display:block}
 #vo .ref-logo{height:70px;background:#E8E0D4;border-radius:6px;display:flex;align-items:center;justify-content:center;font:11px monospace;color:#7E776D;letter-spacing:.06em}
 #vo .ref-info strong{display:block;font-size:16px}
 #vo .ref-info span{font-size:13.5px;color:#7E8983}
@@ -661,7 +664,7 @@
           <div><strong>Sochorova</strong><span>Stánek</span></div>
         </div>
       </div>
-      <div class="ops-image">FOTO — AKTUÁLNÍ FOTO PROVOZU<br>nahradit novou fotografií</div>
+      <div class="ops-image"><img src="img/provoz.webp" alt="Barista připravuje kávu na provozovně Kopi Bean" loading="lazy"></div>
     </div>
 
     <div class="refs-head">
@@ -670,14 +673,14 @@
     </div>
     <div class="references">
       <div class="ref-card">
-        <div class="ref-logo">LOGO BEZCUKRU</div>
+        <div class="ref-logo"><img src="img/ref-bezcukru.png" alt="Bezcukru" loading="lazy"></div>
         <div class="ref-info">
           <strong>Bezcukru</strong>
           <span>kavárna, Brno</span>
         </div>
       </div>
       <div class="ref-card">
-        <div class="ref-logo">LOGO VÁŽKAFÉ</div>
+        <div class="ref-logo"><img src="img/ref-vazkafe.png" alt="Vážkafé" loading="lazy"></div>
         <div class="ref-info">
           <strong>Vážkafé</strong>
           <span>kavárna, Brno</span>
@@ -699,7 +702,7 @@
         <p>Zelené zrno odebíráme od dovozců, se kterými pracujeme dlouhodobě: <strong>Fest Coffee Mission, G.&nbsp;Bijdendijk B.V. a&nbsp;Dethlefsen &amp;&nbsp;Balk</strong>. Od každého lotu si necháme poslat vzorek, cuppujeme ho a&nbsp;na vzorkovací pražičce Roest L200 Ultra hledáme vhodný profil pražení.</p>
         <p>Teprve když káva sedí, převedeme recept do produkčního pražení na patnáctikilové pražičce IMF. Ke každému lotu dostanete informace o&nbsp;původu, farmě, zpracování a&nbsp;odrůdě ve formě, kterou můžete rovnou použít v&nbsp;menu.</p>
       </div>
-      <div class="ph">FOTO — CUPPING NA BERKOVĚ<br>cupping-berkova.webp</div>
+      <div class="ph"><img src="img/cupping-berkova.webp" alt="Cupping vzorků zelené kávy v pražírně na Berkově" loading="lazy"></div>
     </div>
 
     <div style="margin:80px 0 34px">
@@ -711,7 +714,7 @@
         <p>Náš příběh nezačal kávou, ale dřevem. Majitel <strong>Jakub Fiala</strong> jezdil od roku 2005 pracovně po indonéských ostrovech a&nbsp;přes místní přátele se dostal ke kávě. V&nbsp;roce <strong>2007</strong> přivezl z&nbsp;jižní Sumatry první <strong>cibetkovou kávu od divoce žijících cibetek</strong> a&nbsp;ve stejném roce vznikla v&nbsp;Brně první prodejna a&nbsp;pražírna.</p>
         <p>O&nbsp;rok později přibyl dovoz zrnkové kávy ze sumaterských plantáží. Právě na téhle kávě se učil pražit. Od malé 250gramové pražičky k&nbsp;dnešní patnáctikilové IMF vedla dlouhá cesta.</p>
       </div>
-      <div class="ph">FOTO — SUMATRA / CESTA ZA KÁVOU<br>plantaz-sumatra.webp</div>
+      <div class="ph"><img src="img/plantaz-sumatra.webp" alt="Kávová plantáž na Sumatře" loading="lazy"></div>
     </div>
 
     <div class="dest">
@@ -747,7 +750,7 @@
       <div class="txt"><p>Když si host chce odnést kávu, kterou právě pil, dodáme vám menší balení do regálu. Kupujete je za velkoobchodní cenu a&nbsp;vlastní prodejní marži si určujete sami.</p></div>
     </div>
     <div class="branding">
-      <div class="brand-photo">FOTO — 200G BALENÍ<br>baleni-200g.webp</div>
+      <div class="brand-photo"><img src="img/baleni-200g.webp" alt="Balení kávy Kopi Bean 200 g na regálu v kavárně" loading="lazy"></div>
       <div class="brand-body">
         <span class="eyebrow">Dvě cesty</span>
         <div class="brand-cols">
