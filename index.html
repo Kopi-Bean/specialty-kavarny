@@ -71,9 +71,9 @@
 
 /* ===== HLAVIČKA ===== */
 #vo .site-head{position:sticky;top:0;z-index:200;background:rgba(253,251,247,.94);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--rule)}
-#vo .site-head .wrap{display:flex;align-items:center;gap:20px;height:80px}
+#vo .site-head .wrap{display:flex;align-items:center;gap:20px;height:92px}
 #vo .site-logo{display:flex;align-items:center;gap:10px;flex:1 1 0;min-width:0}
-#vo .site-logo img{height:42px;width:auto;display:block}
+#vo .site-logo img{height:56px;width:auto;display:block}
 #vo .site-nav{display:flex;gap:26px;align-items:center;flex:0 0 auto}
 #vo .site-nav a{font-size:14.5px;font-weight:500;color:var(--ink-mute);text-decoration:none;white-space:nowrap;transition:color .12s}
 #vo .site-nav a:hover{color:var(--accent)}
@@ -104,8 +104,8 @@
   #vo .site-nav a:last-child{border-bottom:0}
 }
 @media(max-width:640px){
-  #vo .site-head .wrap{height:64px;gap:10px}
-  #vo .site-logo img{height:34px}
+  #vo .site-head .wrap{height:70px;gap:10px}
+  #vo .site-logo img{height:40px}
   #vo .head-cta .eshop{display:none}
   #vo .head-cta .btn{padding:9px 14px;font-size:14px}
   #vo .site-nav a{padding:14px 20px}
@@ -278,6 +278,7 @@
 
 /* PŮVOD */
 #vo .source{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+@media(min-width:1001px){#vo .source.flip>*:first-child{order:2}}
 #vo .source p+p{margin-top:16px}
 #vo .ph img{width:100%;height:100%;object-fit:cover;display:block}
 #vo .ph{overflow:hidden;aspect-ratio:16/10;border-radius:12px}
@@ -415,7 +416,7 @@
 <header class="site-head">
   <div class="wrap">
     <span class="site-logo">
-      <img src="img/logo-kopibean.svg" alt="Kopi Bean" width="180" height="42">
+      <img src="img/logo-kopibean.svg" alt="Kopi Bean" width="240" height="56">
     </span>
 
     <nav class="site-nav" id="site-nav" aria-label="Sekce stránky">
@@ -538,7 +539,6 @@
 <section class="vo-sec" id="servis">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Servis a&nbsp;podpora</span>
       <h2>Pomůžeme vám z&nbsp;naší kávy dostat maximum.</h2>
       <div class="txt"><p>Kávu dodáváme s&nbsp;jasně daným profilem pražení a&nbsp;vašemu baristovi pomůžeme ji na vašem stroji vyladit. Servis je součástí spolupráce, ne příplatkovou položkou.</p></div>
     </div>
@@ -667,7 +667,6 @@
 <section class="vo-sec" id="provozy">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Z&nbsp;druhé strany baru</span>
       <h2>Naši kávu každý den sami připravujeme na třech vlastních provozech.</h2>
     </div>
     <div class="ops">
@@ -691,7 +690,7 @@
         <div class="ref-logo"><img src="img/ref-bezcukru.png" alt="Bezcukru" loading="lazy"></div>
         <div class="ref-info">
           <strong>Bezcukru</strong>
-          <span>kavárna, Brno&nbsp;· Instagram&nbsp;↗</span>
+          <span>cukrárna, Brno&nbsp;· Instagram&nbsp;↗</span>
         </div>
       </a>
       <a class="ref-card" href="https://www.instagram.com/vazkafe.brno/" target="_blank" rel="noopener">
@@ -709,7 +708,6 @@
 <section class="vo-sec gridded" id="puvod">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Původ a&nbsp;pražení</span>
       <h2>Než zrno koupíme, otestujeme každý vzorek.</h2>
     </div>
     <div class="source">
@@ -721,10 +719,9 @@
     </div>
 
     <div class="sec-head" style="margin:72px 0 40px">
-      <span class="eyebrow">Historie pražírny</span>
       <h2>Pražíme od roku 2007.</h2>
     </div>
-    <div class="source">
+    <div class="source flip">
       <div>
         <p>Náš příběh nezačal kávou, ale dřevem. Majitel <strong>Jakub Fiala</strong> jezdil od roku 2005 pracovně po indonéských ostrovech a&nbsp;přes místní přátele se dostal ke kávě. V&nbsp;roce <strong>2007</strong> přivezl z&nbsp;jižní Sumatry první <strong>cibetkovou kávu od divoce žijících cibetek</strong> a&nbsp;ve stejném roce vznikla v&nbsp;Brně první prodejna a&nbsp;pražírna.</p>
         <p>O&nbsp;rok později přibyl dovoz zrnkové kávy ze sumaterských plantáží. Právě na téhle kávě se učil pražit. Od malé 250gramové pražičky k&nbsp;dnešní patnáctikilové IMF vedla dlouhá cesta.</p>
@@ -756,7 +753,6 @@
     </dl>
     <figure class="spec-photo">
       <img src="img/prazicka-imf.webp" alt="Pražička IMF RM15 v pražírně Kopi Bean na Berkově" loading="lazy">
-      <figcaption>IMF RM15 na Berkově. Dávka 15&nbsp;kg, záznam každé šarže v&nbsp;Cropsteru.</figcaption>
     </figure>
     </div>
   </div>
@@ -766,7 +762,6 @@
 <section class="vo-sec gridded" id="branding">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Prodej kávy hostům</span>
       <h2>Káva může pokračovat z&nbsp;vašeho baru až domů.</h2>
       <div class="txt"><p>Když si host chce odnést kávu, kterou právě pil, dodáme vám menší balení do regálu. Kupujete je za velkoobchodní cenu a&nbsp;vlastní prodejní marži si určujete sami.</p></div>
     </div>
@@ -871,7 +866,7 @@
 
           <div class="field">
             <label for="f-vybaveni">Co máte na baru?</label>
-            <textarea id="f-vybaveni" name="vybaveni" placeholder="Kávovar, mlýnek, kolik šálků denně, jakou kávu točíte teď. Klidně stručně — pomůže nám to vybrat vhodné vzorky."></textarea>
+            <textarea id="f-vybaveni" name="vybaveni" placeholder="Např. La Marzocco Linea + Mahlkönig E65S, 120 šálků denně, teď točíme středně praženou brazílii. Stačí stručně."></textarea>
           </div>
 
           <div class="consent">
@@ -921,7 +916,6 @@
         <h4>Kde nás najdete</h4>
         <ul>
           <li><strong>Pražírna a prodejna</strong>Berkova 481/16, Královo Pole</li>
-          <li><strong>Kavárna u divadla</strong>Lidická 1864/18</li>
           <li><strong>Prodejna a kavárna</strong>Rašínova 10, centrum</li>
           <li><strong>Stánek</strong>Sochorova 3032/2, Žabovřesky</li>
         </ul>
