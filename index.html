@@ -71,15 +71,13 @@
 
 /* ===== HLAVIČKA ===== */
 #vo .site-head{position:sticky;top:0;z-index:200;background:rgba(253,251,247,.94);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--rule)}
-#vo .site-head .wrap{display:flex;align-items:center;gap:20px;height:68px}
+#vo .site-head .wrap{display:flex;align-items:center;gap:20px;height:80px}
 #vo .site-logo{display:flex;align-items:center;gap:10px;flex:1 1 0;min-width:0}
-#vo .site-logo img{height:28px;width:auto;display:block}
+#vo .site-logo img{height:42px;width:auto;display:block}
 #vo .site-nav{display:flex;gap:26px;align-items:center;flex:0 0 auto}
 #vo .site-nav a{font-size:14.5px;font-weight:500;color:var(--ink-mute);text-decoration:none;white-space:nowrap;transition:color .12s}
 #vo .site-nav a:hover{color:var(--accent)}
 #vo .head-cta{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex:1 1 0}
-#vo .head-cta .eshop{font-size:14.5px;font-weight:500;color:var(--ink-mute);text-decoration:none;white-space:nowrap}
-#vo .head-cta .eshop:hover{color:var(--accent)}
 #vo .head-cta .btn{padding:10px 18px;font-size:14.5px;white-space:nowrap}
 
 /* hamburger */
@@ -93,8 +91,12 @@
 #vo .site-head.open .nav-toggle span:before{transform:translateY(5.5px) rotate(45deg)}
 #vo .site-head.open .nav-toggle span:after{transform:translateY(-5.5px) rotate(-45deg)}
 
+#vo .nav-cta{display:none}
 @media(max-width:1080px){
   #vo .nav-toggle{display:flex}
+  #vo .head-cta .head-btn{display:none}
+  #vo .nav-cta{display:block;padding:16px 28px 18px}
+  #vo .nav-cta .btn{width:100%;padding:14px 20px;font-size:15.5px}
   #vo .site-nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
     background:var(--paper-2);border-bottom:1px solid var(--rule);box-shadow:0 12px 24px rgba(26,32,28,.07);padding:6px 0}
   #vo .site-head.open .site-nav{display:flex}
@@ -102,10 +104,12 @@
   #vo .site-nav a:last-child{border-bottom:0}
 }
 @media(max-width:640px){
-  #vo .site-head .wrap{height:58px;gap:10px}
+  #vo .site-head .wrap{height:64px;gap:10px}
+  #vo .site-logo img{height:34px}
   #vo .head-cta .eshop{display:none}
   #vo .head-cta .btn{padding:9px 14px;font-size:14px}
   #vo .site-nav a{padding:14px 20px}
+  #vo .nav-cta{padding:14px 20px 16px}
 }
 
 /* ===== PATIČKA ===== */
@@ -273,17 +277,21 @@
 #vo .ops-image{overflow:hidden;border-radius:12px;min-height:380px}
 
 /* PŮVOD */
-#vo .source{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+#vo .source{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
 #vo .source p+p{margin-top:16px}
 #vo .ph img{width:100%;height:100%;object-fit:cover;display:block}
 #vo .ph{overflow:hidden;aspect-ratio:16/10;border-radius:12px}
-#vo .dest{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#vo .dest{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 #vo .dest div{padding:22px;background:var(--paper-2);border:1px solid var(--rule);border-radius:10px}
 #vo .dest strong{display:block;margin-bottom:6px}
 #vo .dest p{font-size:14.5px}
 
 /* TRANSPARENTNOST */
-#vo .spec{display:grid;grid-template-columns:220px 1fr;border-top:1px solid var(--rule)}
+#vo .spec-grid{display:grid;grid-template-columns:1fr .68fr;gap:48px;align-items:start}
+#vo .spec-photo{margin:0}
+#vo .spec-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block}
+#vo .spec-photo figcaption{margin-top:14px;font-size:13.5px;line-height:1.5;color:#7E8983;max-width:34ch}
+#vo .spec{display:grid;grid-template-columns:190px 1fr;border-top:1px solid var(--rule);align-content:start}
 #vo .spec dt,#vo .spec dd{padding:18px 0;border-bottom:1px solid var(--rule)}
 #vo .spec dt{font:600 11px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:#68726D}
 #vo .spec dd{padding-left:30px;color:var(--ink-mute);font-size:15px}
@@ -307,7 +315,9 @@
 #vo .refs-head .eyebrow{display:block;margin-bottom:12px}
 #vo .refs-head h3{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;max-width:34ch}
 #vo .references{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
-#vo .ref-card{padding:24px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);display:flex;flex-direction:column;gap:16px}
+#vo .ref-card{padding:24px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);display:flex;flex-direction:column;gap:16px;text-decoration:none;transition:border-color .14s,transform .14s}
+#vo a.ref-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+#vo a.ref-card:hover .ref-info strong{color:var(--accent)}
 #vo .ref-logo img{max-width:60%;max-height:44px;width:auto;height:auto;object-fit:contain;display:block}
 #vo .ref-logo{height:70px;display:flex;align-items:center;justify-content:flex-start}
 #vo .ref-info strong{display:block;font-size:16px}
@@ -346,6 +356,8 @@
   #vo .source{gap:28px}
   #vo .ops-image{min-height:280px}
   #vo .faq{grid-template-columns:1fr}
+  #vo .spec-grid{grid-template-columns:1fr;gap:38px}
+  #vo .spec-photo img{aspect-ratio:16/10}
   #vo .proof .wrap{grid-template-columns:1fr 1fr}
   #vo .proof .wrap>div{padding:22px 18px}
   #vo .proof .wrap>div:nth-child(2n+1){padding-left:0;border-right:1px solid #3A4145}
@@ -403,7 +415,7 @@
 <header class="site-head">
   <div class="wrap">
     <span class="site-logo">
-      <img src="img/logo-kopibean.svg" alt="Kopi Bean" width="120" height="28">
+      <img src="img/logo-kopibean.svg" alt="Kopi Bean" width="180" height="42">
     </span>
 
     <nav class="site-nav" id="site-nav" aria-label="Sekce stránky">
@@ -413,11 +425,12 @@
       <a href="#puvod">Původ zrna</a>
       <a href="#branding">Prodej hostům</a>
       <a href="#faq">Otázky</a>
+      <a class="eshop" href="https://www.kopibean.cz" target="_blank" rel="noopener">E-shop&nbsp;↗</a>
+      <span class="nav-cta"><a class="btn btn-primary" href="#poptavka">Vzorky zdarma</a></span>
     </nav>
 
     <div class="head-cta">
-      <a class="eshop" href="https://www.kopibean.cz" target="_blank" rel="noopener">E-shop&nbsp;↗</a>
-      <a class="btn btn-primary" href="#poptavka">Vzorky zdarma</a>
+      <a class="btn btn-primary head-btn" href="#poptavka">Vzorky zdarma</a>
       <button class="nav-toggle" type="button" id="nav-toggle"
               aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
     </div>
@@ -674,20 +687,20 @@
       <h3>Kromě vlastních provozů dodáváme i&nbsp;do dalších brněnských podniků.</h3>
     </div>
     <div class="references">
-      <div class="ref-card">
+      <a class="ref-card" href="https://www.instagram.com/bezcukru.cz/" target="_blank" rel="noopener">
         <div class="ref-logo"><img src="img/ref-bezcukru.png" alt="Bezcukru" loading="lazy"></div>
         <div class="ref-info">
           <strong>Bezcukru</strong>
-          <span>kavárna, Brno</span>
+          <span>kavárna, Brno&nbsp;· Instagram&nbsp;↗</span>
         </div>
-      </div>
-      <div class="ref-card">
+      </a>
+      <a class="ref-card" href="https://www.instagram.com/vazkafe.brno/" target="_blank" rel="noopener">
         <div class="ref-logo"><img src="img/ref-vazkafe.png" alt="Vážkafé" loading="lazy"></div>
         <div class="ref-info">
           <strong>Vážkafé</strong>
-          <span>kavárna, Brno</span>
+          <span>kavárna, Brno&nbsp;· Instagram&nbsp;↗</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -707,7 +720,7 @@
       <div class="ph"><img src="img/cupping-berkova.webp" alt="Cupping vzorků zelené kávy v pražírně na Berkově" loading="lazy"></div>
     </div>
 
-    <div style="margin:80px 0 34px">
+    <div class="sec-head" style="margin:72px 0 40px">
       <span class="eyebrow">Historie pražírny</span>
       <h2>Pražíme od roku 2007.</h2>
     </div>
@@ -733,6 +746,7 @@
     <div class="sec-head">
       <h2>Na čem pražíme a&nbsp;co vám o&nbsp;tom řekneme.</h2>
     </div>
+    <div class="spec-grid">
     <dl class="spec">
       <dt>Pražička</dt><dd>IMF RM15 s&nbsp;perforovaným bubnem a&nbsp;horkovzdušným ohřevem, dávka 15&nbsp;kg. Teplo se do zrna přenáší převážně konvekcí, plamen se zrna nedotýká.</dd>
       <dt>Vzorkovací pražička</dt><dd>Roest L200 Ultra. Lot nejdřív otestujeme ve vzorku a&nbsp;teprve potom ho zařadíme do produkce.</dd>
@@ -740,6 +754,11 @@
       <dt>Záznam šarží</dt><dd>Cropster. Křivku konkrétní šarže vám na vyžádání pošleme.</dd>
       <dt>Čerstvost</dt><dd>Pražíme každý den v&nbsp;menších šaržích. Na každém balení je datum pražení i&nbsp;datum spotřeby.</dd>
     </dl>
+    <figure class="spec-photo">
+      <img src="img/prazicka-imf.webp" alt="Pražička IMF RM15 v pražírně Kopi Bean na Berkově" loading="lazy">
+      <figcaption>IMF RM15 na Berkově. Dávka 15&nbsp;kg, záznam každé šarže v&nbsp;Cropsteru.</figcaption>
+    </figure>
+    </div>
   </div>
 </section>
 
