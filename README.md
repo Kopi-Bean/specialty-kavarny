@@ -28,9 +28,7 @@ doména `coffee.kopibean.cz`.
 2. **Formulář** — endpoint je nastavený, ale míří na *testovací* Apps Script
    pod účtem michaelbedna13@gmail.com. Před spuštěním naostro založit tabulku
    i skript pod firemním účtem a novou `/exec` URL vložit do `index.html`.
-3. **Odkaz na zásady ochrany osobních údajů** — ověřit, že
-   `kopibean.cz/ochrana-osobnich-udaju` je správná adresa.
-4. **Fotky v zástupných blocích** — v sekcích `#provozy`, `#puvod`
+3. **Fotky v zástupných blocích** — v sekcích `#provozy`, `#puvod`
    a `#branding` jsou zatím šedé placeholdery.
 
 ## Spuštění na GitHub Pages
