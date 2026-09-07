@@ -25,8 +25,9 @@ doména `coffee.kopibean.cz`.
 ## Co je potřeba dodělat
 
 1. **Obrázky** — doplnit soubory v `img/` podle seznamu výše.
-2. **Formulář** — v `index.html` nahradit `SEM_PATRI_ID_SKRIPTU`
-   skutečnou URL nasazeného Google Apps Scriptu.
+2. **Formulář** — endpoint je nastavený, ale míří na *testovací* Apps Script
+   pod účtem michaelbedna13@gmail.com. Před spuštěním naostro založit tabulku
+   i skript pod firemním účtem a novou `/exec` URL vložit do `index.html`.
 3. **Odkaz na zásady ochrany osobních údajů** — ověřit, že
    `kopibean.cz/ochrana-osobnich-udaju` je správná adresa.
 4. **Fotky v zástupných blocích** — v sekcích `#provozy`, `#puvod`
