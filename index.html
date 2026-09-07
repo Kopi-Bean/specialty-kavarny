@@ -238,19 +238,21 @@
 
 #vo .carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 #vo .carousel-track::-webkit-scrollbar{display:none}
-#vo .prof{flex:0 0 260px;scroll-snap-align:start;border-right:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column}
+#vo .prof{text-decoration:none;transition:background .14s;flex:0 0 260px;scroll-snap-align:start;border-right:1px solid var(--rule);background:var(--paper-2);display:flex;flex-direction:column}
 #vo .prof:last-child{border-right:0}
-#vo .prof .bar{height:5px;background:var(--green)}
-#vo .prof:nth-child(2) .bar{background:#7C9D81}
-#vo .prof:nth-child(3) .bar{background:#C46C34}
-#vo .prof:nth-child(4) .bar{background:#8C68A7}
-#vo .prof:nth-child(5) .bar{background:#4B91B5}
-#vo .prof:nth-child(6) .bar{background:#9FA1A4}
+#vo .prof .bar{height:5px;background:#634029}          /* Ritual — Klasika */
+#vo .prof:nth-child(2) .bar{background:#4b7c59}        /* Muse */
+#vo .prof:nth-child(3) .bar{background:#e94801}        /* Nectar */
+#vo .prof:nth-child(4) .bar{background:#7828a3}        /* Exotic */
+#vo .prof:nth-child(5) .bar{background:#0384d5}        /* Calm — decaf */
+#vo .prof:nth-child(6) .bar{background:#9FA1A4}        /* jednodruhovky */
 #vo .prof .shot{height:260px;padding:22px;display:flex;align-items:center;justify-content:center;background:#F1ECE4}
 #vo .prof .shot img{width:100%;height:100%;object-fit:contain}
 #vo .prof .qm{font-size:70px;font-weight:800;color:#B4ADA3}
 #vo .prof .in{padding:20px;display:flex;flex-direction:column;flex:1}
-#vo .prof .nm{font-weight:800;font-size:19px}
+#vo .prof .nm{font-weight:800;font-size:19px;transition:color .14s}
+#vo a.prof:hover{background:var(--white)}
+#vo a.prof:hover .nm{color:var(--accent)}
 #vo .prof .sub{display:block;font:11px 'IBM Plex Mono',monospace;color:#7E8983;text-transform:uppercase;margin-top:4px;letter-spacing:.06em}
 #vo .prof .desc{font-size:13.5px;margin:13px 0;flex-grow:1} 
 #vo .tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:auto} 
@@ -268,13 +270,13 @@
 #vo .ops-list strong{display:block;font-size:15px}
 #vo .ops-list span{font:10px 'IBM Plex Mono',monospace;color:#7E8983;text-transform:uppercase;letter-spacing:.06em}
 #vo .ops-image img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block}
-#vo .ops-image{overflow:hidden;padding:0;border-radius:12px;background:#DDD4C7;min-height:380px;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;color:#7E776D;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em}
+#vo .ops-image{overflow:hidden;border-radius:12px;min-height:380px}
 
 /* PŮVOD */
 #vo .source{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
 #vo .source p+p{margin-top:16px}
 #vo .ph img{width:100%;height:100%;object-fit:cover;display:block}
-#vo .ph{overflow:hidden;padding:0;aspect-ratio:16/10;background:#DED5C8;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#777066;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em;padding:25px}
+#vo .ph{overflow:hidden;aspect-ratio:16/10;border-radius:12px}
 #vo .dest{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 #vo .dest div{padding:22px;background:var(--paper-2);border:1px solid var(--rule);border-radius:10px}
 #vo .dest strong{display:block;margin-bottom:6px}
@@ -292,7 +294,7 @@
 #vo .cta-strip p{color:#9FAAA5;font-size:14.5px;margin-top:4px}
 
 #vo .branding{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--paper-2)}
-#vo .brand-photo{background:#E3DBCE;display:flex;align-items:center;justify-content:center;text-align:center;min-height:320px;padding:28px;color:#7E776D;font:11px/1.7 'IBM Plex Mono',monospace;letter-spacing:.08em}
+#vo .brand-photo{min-height:320px;overflow:hidden}
 #vo .brand-photo img{width:100%;height:100%;object-fit:cover}
 #vo .brand-body{padding:34px;border-left:1px solid var(--rule)}
 #vo .brand-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
@@ -306,8 +308,8 @@
 #vo .refs-head h3{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;max-width:34ch}
 #vo .references{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px}
 #vo .ref-card{padding:24px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);display:flex;flex-direction:column;gap:16px}
-#vo .ref-logo img{max-width:70%;max-height:44px;width:auto;height:auto;object-fit:contain;display:block}
-#vo .ref-logo{height:70px;background:#E8E0D4;border-radius:6px;display:flex;align-items:center;justify-content:center;font:11px monospace;color:#7E776D;letter-spacing:.06em}
+#vo .ref-logo img{max-width:60%;max-height:44px;width:auto;height:auto;object-fit:contain;display:block}
+#vo .ref-logo{height:70px;display:flex;align-items:center;justify-content:flex-start}
 #vo .ref-info strong{display:block;font-size:16px}
 #vo .ref-info span{font-size:13.5px;color:#7E8983}
 
@@ -601,36 +603,36 @@
         </button>
 
         <div class="carousel-track">
-          <div class="prof">
+          <a class="prof" href="https://www.kopibean.cz/p/ritual-cokoladova-klasika" target="_blank" rel="noopener">
             <div class="bar"></div>
             <div class="shot"><img src="img/kava-ritual.webp" alt="Kopi Bean Ritual — čokoládová klasika, balení 1 kg" loading="lazy"></div>
             <div class="in"><div class="nm">RITUAL</div><span class="sub">čokoládová klasika</span><p class="desc">Sladké espresso s&nbsp;nízkou aciditou. Stabilní v&nbsp;mléčných nápojích i&nbsp;při vysokém provozu.</p><div class="tags"><span>Espresso</span><span>S mlékem</span></div></div>
-          </div>
-          <div class="prof">
+          </a>
+          <a class="prof" href="https://www.kopibean.cz/p/muse-kvetinovy-filtr" target="_blank" rel="noopener">
             <div class="bar"></div>
             <div class="shot"><img src="img/kava-muse.webp" alt="Kopi Bean Muse — filtr s květinovým profilem, balení 1 kg" loading="lazy"></div>
             <div class="in"><div class="nm">MUSE</div><span class="sub">filtr s&nbsp;květinovým profilem</span><p class="desc">Jemná a&nbsp;elegantní káva pro filtr a&nbsp;batch brew. Čistý šálek po celý den.</p><div class="tags"><span>Filtr</span><span>Batch brew</span></div></div>
-          </div>
-          <div class="prof">
+          </a>
+          <a class="prof" href="https://www.kopibean.cz/p/nectar-stavnata-a-ovocna" target="_blank" rel="noopener">
             <div class="bar"></div>
             <div class="shot"><img src="img/kava-nectar.webp" alt="Kopi Bean Nectar — bobule a citrusy, balení 1 kg" loading="lazy"></div>
             <div class="in"><div class="nm">NECTAR</div><span class="sub">bobule a citrusy</span><p class="desc">Živější acidita a&nbsp;výraznější profil pro hosty, kteří hledají něco šťavnatějšího.</p><div class="tags"><span>Filtr</span><span>Espresso</span></div></div>
-          </div>
-          <div class="prof">
+          </a>
+          <a class="prof" href="https://www.kopibean.cz/p/exotic-specialni-zpracovani" target="_blank" rel="noopener">
             <div class="bar"></div>
             <div class="shot"><img src="img/kava-exotic.webp" alt="Kopi Bean Exotic — speciální fermentace, balení 1 kg" loading="lazy"></div>
             <div class="in"><div class="nm">EXOTIC</div><span class="sub">speciální fermentace</span><p class="desc">Kávy s&nbsp;výrazným charakterem na nabídku dne. Charakter se mění, kvalita ne.</p><div class="tags"><span>Filtr</span><span>Espresso</span><span>Nabídka dne</span></div></div>
-          </div>
-          <div class="prof">
+          </a>
+          <a class="prof" href="https://www.kopibean.cz/p/calm-vyberovy-decaf" target="_blank" rel="noopener">
             <div class="bar"></div>
             <div class="shot"><img src="img/kava-calm.webp" alt="Kopi Bean Calm — výběrová bezkofeinová, balení 1 kg" loading="lazy"></div>
             <div class="in"><div class="nm">CALM</div><span class="sub">výběrová bezkofeinová</span><p class="desc">Bezkofeinová, ale pořád výběrová. Espresso i&nbsp;filtr pro hosty, kteří kofein večer nechtějí.</p><div class="tags"><span>Espresso</span><span>Filtr</span></div></div>
-          </div>
-          <div class="prof">
+          </a>
+          <a class="prof" href="https://www.kopibean.cz/kava" target="_blank" rel="noopener">
             <div class="bar"></div>
             <div class="shot"><div class="qm">?</div></div>
             <div class="in"><div class="nm">JEDNODRUHOVKY</div><span class="sub">sezónní mikroloty</span><p class="desc">Proměnlivá nabídka podle sklizně. Na nabídku dne, cuppingy i&nbsp;soutěže.</p><div class="tags"><span>Sezónní</span><span>Loty</span></div></div>
-          </div>
+          </a>
         </div>
         <div class="carousel-dots" role="tablist" aria-label="Přejít na kávu"></div>
       </div>
